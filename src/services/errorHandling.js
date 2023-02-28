@@ -16,10 +16,10 @@ export function asynchandiler(fn) {
 export const GEH = (err, req, res, next) => {
     if (err) {
         if (process.env.mood === "DEV") {
-            res.status(err['cause' ]|| 500).json({ err: err.message, stack: err.stack })
+            res.status(err['cause' ]|| 500).json({ err: err.message,stack: err.stack })
 
         } else {
-            res.status(err['cause'] || 500).json({ err: err.message })
+            res.status(err['cause'] || 500).json({ err: err.message,stack: err.stack })
 
         }
 
